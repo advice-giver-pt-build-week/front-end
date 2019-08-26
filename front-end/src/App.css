@@ -28,11 +28,13 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
   line-height: 1;
-  background-image: url('./beverage-break-coffee-935872.jpg');
+  background-image: url('./beverage-break-coffee-935872.jpg'); 
   background-size: cover;
 }
+
 ol, ul {
 	list-style: none;
 }
@@ -118,6 +120,9 @@ text-align: center;
 }
 
 .App-logo {
+  line-height: 1;
+  background-image: url('./beverage-break-coffee-935872.jpg'); 
+  background-size: cover;
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
