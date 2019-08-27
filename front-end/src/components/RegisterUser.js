@@ -20,96 +20,89 @@ const initialFormState = {
 };
 
 const RegisterUser = () => {
-  const [formState, setFormState] = useState(initialFormState);
-
+  const [ formState, setFormState ] = useState( initialFormState );
+  
   const handleChange = event => {
-    console.log(event.target);
+    console.log( event.target );
     const newState = formState;
-
-    newState[event.target.name] = event.target.value;
-
-    setFormState({ ...newState });
+    
+    newState[ event.target.name ] = event.target.value;
+    
+    setFormState( { ...newState } );
   };
-
+  
   const handleCheckbox = event => {
     const newState = formState;
-
-    newState[event.target.name] = !formState[event.target.name];
-
-    setFormState({ ...newState });
+    
+    newState[ event.target.name ] = !formState[ event.target.name ];
+    
+    setFormState( { ...newState } );
   };
-
+  
   const handleSubmit = event => {
     event.preventDefault();
-
+    
     axios
-      .post(REGISTER_URL, formState)
-      .then(response => {
-        console.log(response);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+      .post( REGISTER_URL, formState )
+      .then( response => {
+        console.log( response );
+      } )
+      .catch( err => {
+        console.log( err );
+      } );
   };
-
+  
   const {
-    username,
-    password,
-    email,
-    expertise,
-    adviceGiver,
-    age,
-    yearsOfExperience
+    username, password, email, expertise, adviceGiver, age, yearsOfExperience
   } = formState;
-
-  return (
-    <Form
-      onSubmit={handleSubmit}
+  
+  return ( <Form
+      onSubmit={ handleSubmit }
     >
       Email
-      <input name="email" value={email} type="email" onChange={handleChange} />
+      <input name="email" value={ email } type="email"
+             onChange={ handleChange }/>
       Username
       <input
         name="username"
-        value={username}
+        value={ username }
         type="text"
-        onChange={handleChange}
+        onChange={ handleChange }
       />
       Password
       <input
         name="password"
-        value={password}
+        value={ password }
         type="password"
-        onChange={handleChange}
+        onChange={ handleChange }
       />
       Expertise
       <input
         name="expertise"
-        value={expertise}
+        value={ expertise }
         type="text"
-        onChange={handleChange}
+        onChange={ handleChange }
       />
       Age
-      <input name="age" value={age} type="number" onChange={handleChange} />
+      <input name="age" value={ age } type="number" onChange={ handleChange }/>
       Years Of Experience
       <input
         name="yearsOfExperience"
-        value={yearsOfExperience}
+        value={ yearsOfExperience }
         type="number"
-        onChange={handleChange}
+        onChange={ handleChange }
       />
       Advice Giver?
       <input
         name="adviceGiver"
         type="checkbox"
-        onChange={handleCheckbox}
-        checked={adviceGiver}
+        onChange={ handleCheckbox }
+        checked={ adviceGiver }
       />
       <button name="submit" value="Submit">
         Submit
       </button>
-    </Form>
-  );
+    </Form> );
 };
 
 export default RegisterUser;
