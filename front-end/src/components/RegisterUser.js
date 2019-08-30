@@ -4,9 +4,19 @@ import axios from "axios";
 import { REGISTER_URL } from "../constants";
 import styled from "styled-components";
 
-const Form = styled.form`
-  display: flex;
+const LogForm = styled.div`
+margin: 15px 15px 15px 25px;
+  padding: 15px 15px 15px 25px;
+ width: 150px;
+  height: 300px;
+display: flex;
   flex-direction: column;
+  align-items: center;
+   justify-content: space-around;
+  background-color: #3b3b89;
+  color: slategray;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
 `;
 
 const initialFormState = {
@@ -63,25 +73,28 @@ const RegisterUser = () => {
   } = formState;
 
   return (
-    <Form
+    <div>
+    <LogForm
       onSubmit={handleSubmit}
     >
       Email
       <input name="email" value={email} type="email" onChange={handleChange} />
+      <div>
       Username
       <input
         name="username"
         value={username}
         type="text"
         onChange={handleChange}
-      />
+      /></div>
+      <div>
       Password
       <input
         name="password"
         value={password}
         type="password"
         onChange={handleChange}
-      />
+      /></div>
       Expertise
       <input
         name="expertise"
@@ -108,7 +121,8 @@ const RegisterUser = () => {
       <button name="submit" value="Submit">
         Submit
       </button>
-    </Form>
+    </LogForm>
+    </div>
   );
 };
 

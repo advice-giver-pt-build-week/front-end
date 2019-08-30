@@ -1,18 +1,14 @@
-// import React from "react";
-
-// export default function Header() {
-//     return (
-
-//         <header>
-//             <h1>Advice Giver Application</h1>
-//         </header>
-//     );
-// }
-
 import React from "react";
+import styled from "styled-components";
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
 
 const Header = () => {
-  return <header>header</header>;
+  return <header>
+ </header>;
 };
 
 export default Header;
