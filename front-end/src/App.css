@@ -31,8 +31,8 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
-  background-image: url('./beverage-break-coffee-935872.jpg'); 
-  background-size: cover;
+  /* background-image: url('./images/beverage-break-coffee-935872.jpg'); 
+  background-size: cover; */
 }
 
 ol, ul {
@@ -56,20 +56,17 @@ table {
   padding: 10px auto;
 }
   header{
-    margin: 10px auto;
-    padding: 20px auto;
-    color: #3B3B89;
-    font-size: 45px;
-    font-style: italic;
-    font-weight: bold;
-    font-family: 'Lucida';
-    text-align: center;
+    background-image: url("./images/Talk2_ME.png");
+    background-repeat: no-repeat;
   }
+
   h1{
     margin: 15px auto;
     padding: 15px auto;
+    width: 5000px;
+    height: 350px;
     font-size: 30px;
-    color: #3B3B89;
+    color: red;
     font-weight: bold;
   }
   h2{

@@ -10,9 +10,11 @@ margin: 15px 15px 15px 25px;
  width: 150px;
   height: 300px;
 display: flex;
-  flex-direction: column;
-  align-items: center;
-   justify-content: space-around;
+flex-flow: row;
+/* flex-wrap: wrap; */
+  /* flex-direction: column; */
+  /* align-items: center;
+   justify-content: space-around; */
   background-color: #3b3b89;
   color: slategray;
   font-size: 20px;
