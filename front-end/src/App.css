@@ -122,8 +122,16 @@ section {
     height: 100px;
   }
 
+  .sc-ifAKCX-dOQaaE{
+    display: flex;
+    align-items: center;
+  }
+
+
+
   .tabpage{
     color: hotpink;
+    width: 1500px;
   }
 
 ol,

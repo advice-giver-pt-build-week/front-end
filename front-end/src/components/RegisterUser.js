@@ -8,7 +8,7 @@ const LogForm = styled.div`
   margin: 15px 15px 15px 25px;
   padding: 15px 15px 15px 25px;
   border: 5px solid hotpink;
-  width: 250px;
+  width: 275px;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
@@ -25,7 +25,7 @@ const initialFormState = {
   username: "",
   password: "",
   email: "",
-  adviceGiver: false,
+  adviceGiver: true,
   expertise: "",
   yearsOfExperience: 0,
   age: 0

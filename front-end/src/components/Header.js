@@ -3,10 +3,15 @@ import styled from "styled-components";
 import Img from "./images/talk2_melarge.png";
 
 const Form = styled.div`
-  max-width: 3000px;
-  width: 90%;
-  max-height: 100%;
-  @media screen {max-width: 968px}
+  width: 1500px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  @media screen {
+    max-width: 1500px;
+  }
 `;
 
 const Header = () => {

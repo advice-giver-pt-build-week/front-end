@@ -1,15 +1,16 @@
 import React from "react";
 import { Tab, Menu, Icon } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
-import { Box, Button, Layer, Text } from "grommet";
+// import { Box, Button, Layer, Text } from "grommet";
 import styled from "styled-components";
-import { Close } from 'grommet-icons';
+// import { Close } from 'grommet-icons';
 // import SandboxComponent from './SandboxComponent';
 
 
 const TabForm = styled.div`
   margin: 15px 15px 15px 15px;
   padding: 15px 15px 15px 15px;
+  width: 2000px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -17,18 +18,18 @@ const TabForm = styled.div`
   align-items: center;
   align-content: center;
   font-family: "Oswald", sans-serif;
-  @media screen {max-width: 968px}
+  @media screen {max-width: 1200px}
 `;
 
 const TabNav = () => {
   return (
     <TabForm>
-    <div class="tab-menu">
-      <NavLink exact activeClassName="active" to={"/"}>
+      {/* <NavLink exact activeClassName="active" to={"/"}>
         <a class="tabpage">Welcome Page</a>
-      </NavLink>
-      <NavLink exact activeClassName="active" to={"/mentors/"}>
-        <a class="tabpage">Mentors</a>
+      </NavLink>  */}
+      <div class="tab-menu">
+      <NavLink exact activeClassName="active" to={"/myMentors/"}>
+        <a class="tabpage">My Mentors</a>
       </NavLink>
       <NavLink exact activeClassName="active" to={"/locations/"}>
         <a class="tabpage">Locations</a>
