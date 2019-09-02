@@ -10,13 +10,14 @@ import { Close } from 'grommet-icons';
 const TabForm = styled.div`
   margin: 15px 15px 15px 15px;
   padding: 15px 15px 15px 15px;
-  /* width: 300px;
-  height: 300px; */
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   background-color: #3b3b89;
   align-items: center;
+  align-content: center;
   font-family: "Oswald", sans-serif;
+  @media screen {max-width: 968px}
 `;
 
 const TabNav = () => {

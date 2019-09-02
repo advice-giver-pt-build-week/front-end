@@ -3,148 +3,200 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
-body {
-  line-height: 1;
-  /* background-image: url('./images/beverage-break-coffee-935872.jpg'); 
-  background-size: cover; */
-}
+  body {
+    line-height: 1;
+    background-image: url("./components/images/beverage-break-coffee-935872.jpg");
+    background-size: cover;
+    border-image-repeat: no-repeat;
+  }
 
-ol, ul {
-	list-style: none;
+  .tab-menu{
+    font-size: 25px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 200px;
+    height: 100px;
+  }
+
+  .tabpage{
+    color: hotpink;
+  }
+
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-.App{
+.App {
   max-width: 1000px;
   margin: 10px auto;
   padding: 10px auto;
 }
-  header{
-    background-image: url("./images/Talk2_ME.png");
-    background-repeat: no-repeat;
-  }
 
-  h1{
-    margin: 15px auto;
-    padding: 15px auto;
-    width: 5000px;
-    height: 350px;
-    font-size: 30px;
-    color: red;
-    font-weight: bold;
-  }
-  h2{
-    margin: 15px auto;
-    padding: 15px auto;
-    font-size: 30px;
-    color:#3B3B89;
-    font-weight: bold;
-  }
-  label{
-    margin: 50px auto;
-    padding: 15px auto;
-    font-size: 30px;
-    color: #3B3B89;
-    font-style: italic;
-    font-weight: bold;
-  }
-  p{
-    margin: 15px auto;
-    padding: 15px auto;
-    font-size: 30px;
-    color:#3B3B89;
-    font-weight: bold;
-  }
-  
-  Form{
-    margin: 15px 15px 15px 15px;
-    padding: 15px 15px 15px 15px;
-    text-align: center;
-  }
-  button{
-    width: 200px;
-    margin: 0px 15px 0px 15px;
-    padding: 10px 15px 15px 15px;
-    color: grey;
-    font-weight: bold;
-    background: #3B3B89;
-    border-radius: 25%;
-    font-size: 25px;
-    height: 50px;
-text-align: center;
-  }
+h1 {
+  margin: 15px auto;
+  padding: 15px auto;
+  width: 500px;
+  height: 350px;
+  font-size: 30px;
+  color: red;
+  font-weight: bold;
+}
+h2 {
+  margin: 15px auto;
+  padding: 15px auto;
+  font-size: 30px;
+  color: #3b3b89;
+  font-weight: bold;
+}
+label {
+  margin: 50px auto;
+  padding: 15px auto;
+  font-size: 30px;
+  color: #3b3b89;
+  font-style: italic;
+  font-weight: bold;
+}
+p {
+  margin: 15px auto;
+  padding: 15px auto;
+  font-size: 30px;
+  color: #3b3b89;
+  font-weight: bold;
+}
 
-
-
-/* .App {
+form {
+  margin: 15px 15px 15px 15px;
+  padding: 15px 15px 15px 15px;
   text-align: center;
 }
-
-.App-logo {
-  line-height: 1;
-  background-image: url('./beverage-break-coffee-935872.jpg'); 
-  background-size: cover;
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  width: 200px;
+  margin: 0px 15px 0px 15px;
+  padding: 10px 15px 15px 15px;
+  color: grey;
+  font-weight: bold;
+  background: #3b3b89;
+  border-radius: 25%;
+  font-size: 25px;
+  height: 50px;
+  text-align: center;
 }
