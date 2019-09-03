@@ -106,33 +106,12 @@ section {
   display: block;
 }
 
-  body {
-    line-height: 1;
-    background-image: url("./components/images/beverage-break-coffee-935872.jpg");
-    background-size: cover;
-    border-image-repeat: no-repeat;
-  }
-
-  .tab-menu{
-    font-size: 25px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    width: 200px;
-    height: 100px;
-  }
-
-  .sc-ifAKCX-dOQaaE{
-    display: flex;
-    align-items: center;
-  }
-
-
-
-  .tabpage{
-    color: hotpink;
-    width: 1500px;
-  }
+body {
+  background-image: url("./components/images/beverage-break-coffee-935872.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 ol,
 ul {
@@ -152,59 +131,4 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-.App {
-  max-width: 1000px;
-  margin: 10px auto;
-  padding: 10px auto;
-}
-
-h1 {
-  margin: 15px auto;
-  padding: 15px auto;
-  width: 500px;
-  height: 350px;
-  font-size: 30px;
-  color: red;
-  font-weight: bold;
-}
-h2 {
-  margin: 15px auto;
-  padding: 15px auto;
-  font-size: 30px;
-  color: #3b3b89;
-  font-weight: bold;
-}
-label {
-  margin: 50px auto;
-  padding: 15px auto;
-  font-size: 30px;
-  color: #3b3b89;
-  font-style: italic;
-  font-weight: bold;
-}
-p {
-  margin: 15px auto;
-  padding: 15px auto;
-  font-size: 30px;
-  color: #3b3b89;
-  font-weight: bold;
-}
-
-form {
-  margin: 15px 15px 15px 15px;
-  padding: 15px 15px 15px 15px;
-  text-align: center;
-}
-button {
-  width: 200px;
-  margin: 0px 15px 0px 15px;
-  padding: 10px 15px 15px 15px;
-  color: grey;
-  font-weight: bold;
-  background: #3b3b89;
-  border-radius: 25%;
-  font-size: 25px;
-  height: 50px;
-  text-align: center;
 }

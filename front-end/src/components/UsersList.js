@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { isEmail, isNumeric } from "validator";
 import axios from "axios";
-import { ADVISER_URL } from "../constants";
-import MentorCard from "./MentorCard";
+import { USERS_URL } from "../constants";
+import UsersCard from "./UsersCard";
 import styled from "styled-components";
 
-const MentorForm = styled.div`
+const UsersForm = styled.div`
   margin: 15px 15px 15px 25px;
   padding: 15px 15px 15px 25px;
   border: 5px solid hotpink;
@@ -22,38 +22,38 @@ const MentorForm = styled.div`
   }
 `;
 
-const MentorUser = () => {
-  const [mentorData, setMentorData] = useState([]);
+const ListUsers = () => {
+  const [usersData, setUsersData] = useState([]);
 
   useEffect(() => {
     axios
-      .get(ADVISER_URL, {
+      .get(USERS_URL, {
         headers: {
           authorization: `${localStorage.getItem("token")}`
         }
       })
       .then(response => {
         console.log(response)
-        setMentorData(response.data);
+        setUsersData(response.data);
       })
       .catch(error => {
         console.log("error", error);
       });
   }, []);
 
-  console.log(mentorData);
+  console.log(usersData);
 
   return (
     <div>
-      <MentorForm>
-        <section className="mentor-list grid-view">
-          {mentorData.map(mentor => {
-            return <MentorCard mentorInfo={mentor} />;
+      <UsersForm>
+        <section className="users-list grid-view">
+          {usersData.map(users => {
+            return <UsersCard usersInfo={users} />;
           })}
         </section>
-      </MentorForm>
+      </UsersForm>
     </div>
   );
 };
 
-export default MentorUser;
+export default ListUsers;
