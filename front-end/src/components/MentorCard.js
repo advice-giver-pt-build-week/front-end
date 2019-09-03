@@ -5,32 +5,33 @@ import styled from "styled-components";
 const MentorCard = styled.div`
   margin: 5px 5px 5px 5px;
   padding: 5px 5px 5px 5px;
-  box-shadow: 2px 3px #352f2f;
-  width: 45%;
-  height: 200px;
+  width: 95%;
+  height: 85%;
   display: flex;
   flex-wrap: wrap;
 `;
 
 export default function CharacterCard(props) {
   return (
+    <div>
     <MentorCard>
       <Card>
         <Image src={props.mentorInfo.image} wrapped ui={false} />
         <Card.Content>
-          <Card.Header>{props.mentorInfo.username}</Card.Header>
+          <Card.Header>{props.mentorInfo.username} here to advise!</Card.Header>
           <Card.Meta>{props.mentorInfo.email}</Card.Meta>
-          <Card.Description>{props.mentorInfo.expertise}</Card.Description>
-          <Card.Description>{props.mentorInfo.yearsOfExperience}</Card.Description>
-          <Card.Description>{props.mentorInfo.age}</Card.Description>
+          <Card.Description>{props.mentorInfo.expertise} Expert</Card.Description>
+          <Card.Description>{props.mentorInfo.yearsOfExperience} Years Of Experience</Card.Description>
+          <Card.Description>{props.mentorInfo.age} Yrs Old</Card.Description>
         </Card.Content>
         <Card.Content extra>
           <a>
-            <Icon name="user" />
-            Mentors
+            <Icon name="mentors" />
+            I'm Here to Help!
           </a>
         </Card.Content>
       </Card>
     </MentorCard>
+    </div>
   );
 }

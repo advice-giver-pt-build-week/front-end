@@ -4,51 +4,92 @@ import axios from "axios";
 import { REGISTER_URL } from "../constants";
 import styled from "styled-components";
 
-const LogForm = styled.div`
+export const StyledInput = styled.input`
+  border-radius: 25px;
+  border-color: darkgray;
+  border: 2px solid darkgray;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 20px;
+  height: 35px;
+  padding-left: 10px;
+
+  @media screen {
+    max-width: 1000px;
+  }
+
+  :focus {
+    outline: 2px dotted grey;
+  }
+`;
+
+export const LogForm = styled.div`
   margin: 15px 15px 15px 25px;
   padding: 15px 15px 15px 25px;
   border: 5px solid hotpink;
-  width: 275px;
+  font-size: 15px;
+  font-weight: bold;
   display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  align-items: center;
-  /* justify-content: space-around; */
+  flex-direction: column;
+  text-align: center;
+  width: 275px;
   color: hotpink;
-  /* color: #3b3b89; */
-  font-size: 20px;
   font-family: "Oswald", sans-serif;
-  @media screen {max-width: 968px}
+`;
+
+export const StyledButton = styled.button`
+  width: 200px;
+  margin: 0px 15px 0px 15px;
+  padding: 10px 15px 15px 15px;
+  color: grey;
+  font-weight: bold;
+  background: black;
+  border-radius: 25px;
+  font-size: 25px;
+  height: 50px;
+  text-align: center;
+  :focus {
+    outline: 2px dotted grey;
+  }
 `;
 
 const initialFormState = {
   username: "",
   password: "",
   email: "",
-  adviceGiver: true,
+  adviceGiver: false,
   expertise: "",
   yearsOfExperience: 0,
   age: 0
 };
 
+export const inputChange = (event, formState, setFormState) => {
+  const newState = formState;
+
+  newState[event.target.name] = event.target.value;
+
+  setFormState({ ...newState });
+};
+
+export const checkboxChange = (event, formState, setFormState) => {
+  const newState = formState;
+
+  newState[event.target.name] = !formState[event.target.name];
+
+  setFormState({ ...newState });
+};
+
 const RegisterUser = () => {
   const [formState, setFormState] = useState(initialFormState);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = event => {
-    console.log(event.target);
-    const newState = formState;
-
-    newState[event.target.name] = event.target.value;
-
-    setFormState({ ...newState });
+    inputChange(event, formState, setFormState);
   };
 
   const handleCheckbox = event => {
-    const newState = formState;
-
-    newState[event.target.name] = !formState[event.target.name];
-
-    setFormState({ ...newState });
+    checkboxChange(event, formState, setFormState);
   };
 
   const handleSubmit = event => {
@@ -57,9 +98,17 @@ const RegisterUser = () => {
     axios
       .post(REGISTER_URL, formState)
       .then(response => {
-        console.log(response);
+        if (response.status === 201 || response.statusText === "Created") {
+          setFormState({ ...initialFormState });
+          setSubmitStatus("User Successfully Created");
+        } else if (response.status === 500) {
+          setSubmitStatus("Error 500 Internal Server Error");
+        } else {
+          setSubmitStatus(`Error Creating User: ${response.statusText}`);
+        }
       })
       .catch(err => {
+        setSubmitStatus("Error 500 Internal Server Error");
         console.log(err);
       });
   };
@@ -75,55 +124,61 @@ const RegisterUser = () => {
   } = formState;
 
   return (
-  <div>
+    <div>
       <LogForm onSubmit={handleSubmit}>
+        {submitStatus && submitStatus} <br />
         Email
-        <input
+        <StyledInput
           name="email"
           value={email}
           type="email"
           onChange={handleChange}
         />
-          Username
-          <input
-            name="username"
-            value={username}
-            type="text"
-            onChange={handleChange}
-          />
-          Password
-          <input
-            name="password"
-            value={password}
-            type="password"
-            onChange={handleChange}
-          />
+        Username
+        <StyledInput
+          name="username"
+          value={username}
+          type="text"
+          onChange={handleChange}
+        />
+        Password
+        <StyledInput
+          name="password"
+          value={password}
+          type="password"
+          onChange={handleChange}
+        />
         Expertise
-        <input
+        <StyledInput
           name="expertise"
           value={expertise}
           type="text"
           onChange={handleChange}
         />
         Age
-        <input name="age" value={age} type="number" onChange={handleChange} />
+        <StyledInput
+          name="age"
+          value={age}
+          type="number"
+          onChange={handleChange}
+        />
         Years Of Experience
-        <input
+        <StyledInput
           name="yearsOfExperience"
           value={yearsOfExperience}
           type="number"
           onChange={handleChange}
         />
         Advice Giver?
-        <input
+        <StyledInput
           name="adviceGiver"
           type="checkbox"
           onChange={handleCheckbox}
           checked={adviceGiver}
         />
-        <button name="submit" value="Submit">
+        <StyledButton name="submit" value="Submit" onClick={handleSubmit}>
           Submit
-        </button>
+        </StyledButton>
       </LogForm>
     </div>
   );
