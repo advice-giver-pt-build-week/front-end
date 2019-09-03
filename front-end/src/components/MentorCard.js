@@ -25,10 +25,8 @@ export default function CharacterCard(props) {
           <Card.Description>{props.mentorInfo.age} Yrs Old</Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <a>
             <Icon name="mentors" />
             I'm Here to Help!
-          </a>
         </Card.Content>
       </Card>
     </MentorCard>
